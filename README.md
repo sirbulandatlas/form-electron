@@ -2,26 +2,47 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before running the project, make sure you have the following software installed on your machine:
 
-## Code scaffolding
+- Node.js v16: You can use NVM (Node Version Manager) to install Node.js v16.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+### Installing Node.js v16 using NVM
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Install NVM (Node Version Manager) by following the instructions at [NVM repository](https://github.com/nvm-sh/nvm#installation). Choose the installation method that is suitable for your operating system.
 
-## Running unit tests
+2. Once NVM is installed, open a new terminal window or restart your terminal.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Install Node.js v16 by running the following command:
 
-## Running end-to-end tests
+   ```bash
+   nvm install 16
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Verify that Node.js v16 is installed by running the following command:
 
-## Further help
+   ```bash
+   node --version
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   You should see the version number of Node.js v16.
+
+### Starting the Electron App
+
+1. Install project dependencies by navigating to the project directory in your terminal and running the following command:
+
+   ```bash
+   npm install
+   ```
+
+
+2. Once the installation is complete, you can start the Chat application by running the following command:
+
+   ```bash
+   npm run start-electron
+   ```
+
+   This command will start the development server and provide you with a local URL where you can access the application in your browser.
