@@ -1,0 +1,54 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  margin: 20px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  &__field {
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__error {
+    color: red;
+  }
+
+  &__button {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  &__button-text {
+    margin: 20px;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+  }
+
+  &__button-text.visible {
+    opacity: 1;
+  }
+
+
+  .saved-text {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .error__text {
+    margin: 20px;
+    text-align: center;
+  }
+}

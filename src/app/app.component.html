@@ -1,0 +1,44 @@
+<div *ngIf="isLoading; else content" class="loader">
+  <mat-progress-spinner
+    mode="indeterminate"
+    diameter="50"
+    strokeWidth="5"
+  ></mat-progress-spinner>
+</div>
+
+<ng-template #content>
+  <form [formGroup]="fileSaveForm" #formDirective="ngForm" (ngSubmit)="saveTextToFile()" class="form">
+    <mat-form-field class="form__field">
+      <input matInput formControlName="inputText" placeholder="Enter text" class="form__input">
+      <mat-error *ngIf="fileSaveForm.get('inputText')?.touched && fileSaveForm.get('inputText')?.hasError('required')" class="form__error">
+        Field is required
+      </mat-error>
+      <mat-error *ngIf="fileSaveForm.get('inputText')?.hasError('minlength')" class="form__error">
+        Minimum length is 3 characters
+      </mat-error>
+
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="form__button"
+    >
+      <span *ngIf="isLoading" class="form__button-text">Saving...</span>
+      <span *ngIf="!isLoading" class="form__button-text">Save</span>
+    </button>
+
+    <div
+      *ngIf="savedContent"
+      [@fadeInOut]="(isLoading && savedContent) ? 'void' : '*'"
+      class="saved-text"
+    >
+      Saved Text: {{ savedContent }}
+    </div>
+
+    <div *ngIf="errorMessage" class="error__text form__error">
+      {{ errorMessage }}
+    </div>
+  </form>
+
+</ng-template>
